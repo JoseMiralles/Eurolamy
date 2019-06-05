@@ -55,6 +55,9 @@ $colors: (
 }
 
 html{
+    background: color(main-light, dark) !important;
+}
+body{
     background: color(main-light, base); 
 }
 button{
@@ -131,9 +134,9 @@ svg{
 #table_svg_animation{
     position: absolute;
     height: auto;
-    width: 75%;
+    width: 65%;
     max-width: 420px;
-    top: 1rem;
+    top: 4rem;
     right: 0;
 }
 
@@ -159,6 +162,17 @@ svg{
     padding: 0.3rem 1.5rem 0.3rem 1.5rem;
     border-radius: 0rem !important;
 }
+
+/*Contact section*/
+#contact_section{
+    //background: url('assets/images/hero_background.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 200px;
+}
+
 
 /*QUERIES*/
 @media (min-width: 550px) {
