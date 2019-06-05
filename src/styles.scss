@@ -1,0 +1,209 @@
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+
+// Optional
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/code";
+@import "../node_modules/bootstrap/scss/grid";
+
+$colors: (
+    brand-blue: (
+        base: #161240,
+        light: lighten(#161240, 15%),
+        dark: darken(#161240, 15%),
+        trans: transparentize(#161240, 0.5)
+    ),
+    main-dark: (
+        base: #0a0a08,
+        light: lighten(#0a0a08, 15%),
+        dark: darken(#0a0a08, 15%),
+        trans: transparentize(#0a0a08, 0.5)
+    ),
+    main-light: (
+        base: white,
+        light: lighten(white, 15%),
+        dark: darken(white, 15%),
+        trans: transparentize(white, 0.5)
+    ),
+    secondary-light: (
+        base: #e8ebee,
+        light: lighten(#e8ebee, 15%),
+        dark: darken(#e8ebee, 15%),
+        trans: transparentize(#e8ebee, 0.5)
+    ),
+    main-accent: (
+        base: #923041,
+        light: lighten(#923041, 15%),
+        dark: darken(#923041, 15%),
+        trans: transparentize(#923041, 0.5)
+    ),
+    secondary-accent: (
+        base: #260F0A,
+        light: lighten(#260F0A, 15%),
+        dark: darken(#260F0A, 15%),
+        trans: transparentize(#260F0A, 0.5)
+    )
+);
+
+@function color ($color-name, $color-variant){
+    @return map-get(map-get($colors, $color-name), $color-variant);
+}
+
+html{
+    background: color(main-light, base); 
+}
+button{
+    border-radius: 0rem;
+}
+p{
+    text-align: left;
+    line-height: 1.35 !important;
+    padding-left: 0.4rem;
+}
+
+.btn-primary{
+    background-color: color(main-accent, base) !important;
+    border-color: color(main-accent, base) !important;
+    //max-width: 15rem;
+}
+.btn:active{
+    background-color: color(main-accent, dark) !important;
+}
+
+#logo{
+    height: 1rem;
+}
+nav>a{
+    transform:translateX(-50%);
+    margin-left: 50%;
+}
+
+.navbar{
+    height: 3.5rem;
+}
+
+$enabled-rounded: false;
+
+/*Navigation bar stuff*/
+
+
+
+/*Hero jumbotron stuff*/
+#hero_section{
+    padding:0;
+    position: relative;
+}
+#relative_background{
+    //background: color(main-dark, base);
+    background: url('assets/images/hero_background.png') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 16rem;
+    width: 100%;
+    position: relative;
+    left:0;
+}
+.svg_canvas{
+	height:100%;
+	max-height:33px;
+    width: 100%;
+    fill: color(main-light, base);
+}
+.bottom_canvas{
+	position: absolute;
+	bottom:0;
+}
+svg{
+    background-color: transparent;
+}
+.jumbotron-text-column{
+    margin-top: 0.5rem;
+    margin-left: 4%;
+    width:50%;
+}
+#table_svg_animation{
+    position: absolute;
+    height: auto;
+    width: 75%;
+    max-width: 420px;
+    top: 3rem;
+    right: 0;
+}
+
+
+/*Projects Section*/
+#portfolio_top_wrapper{
+    min-height: 400px;
+    margin-top: 6rem;
+}
+.portfolio_card{
+    background: color(secondary-light, base);
+    margin-bottom: 3rem;
+    border: none;
+    border-radius: 0rem;
+    //color: color(main-light, base);
+}
+.portfolio_card_header{
+    background: color(main-dark, base);
+    color: color(main-light, base);
+    position: absolute;
+    left: 0;
+    top: -1.5rem;
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    border-radius: 0rem !important;
+}
+
+/*QUERIES*/
+@media (min-width: 550px) {
+    #portfolio_top_wrapper{
+        margin-top: 7rem;
+    }
+    #table_svg_animation{
+        width: 52%;
+        top: -1rem;
+        right: 7%;
+    }
+    .jumbotron-text-column {
+        margin-top: 2rem;
+        margin-left: 7%;
+        width: 41%;
+    }
+    #relative_background {
+        height: 19rem;
+    }
+ }
+ @media (min-width: 750px) {
+    #hero_items_wrap{
+        position: absolute;
+        width: 50rem;
+        margin-left: 50%;
+        transform:translateX(-50%);
+    }
+    #table_svg_animation{
+        top: -3rem;
+    }
+    #relative_background {
+        height: 22rem;
+    }
+  }
+  @media (min-width: 1120px) {
+    #table_svg_animation{
+        width: 52%;
+        top: -4rem;
+        right: 7%;
+    }
+    body{
+        width:1120px;
+        margin: 0 auto;
+    }
+    html{
+        background-color: color(main-light, dark);
+    }
+  }
