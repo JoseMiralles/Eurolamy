@@ -139,6 +139,9 @@ svg{
     height: auto;
     width: 100%;
     margin-top:16%;
+    svg{
+        max-height: 85vh;
+    }
 }
 #contact_button{
     padding-left:2rem;
@@ -207,6 +210,18 @@ svg{
 
 /*QUERIES*/
 @media (orientation : landscape){
+    #top_background{
+        height: 75vh !important;
+        padding-top: 0rem !important;
+        @media (min-width: 850px){
+            height: 55vh !important;
+        }
+    }
+}
+@media (min-width: 850px){
+    #top_background{
+        height: 55vh !important;
+    }
 }
 @media (min-width: 470px){
     #top_background{
