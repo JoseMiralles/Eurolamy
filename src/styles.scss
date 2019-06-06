@@ -96,13 +96,17 @@ $enabled-rounded: false;
     position: relative;
     max-width: 845px;
 }
+#hero_items_wrap{
+    margin: auto;
+}
 #top_background{
     //background: color(main-dark, base);
-    background: url('assets/images/hero_background.png') no-repeat center center fixed; 
+    //background: linear-gradient(red, yellow), url('assets/images/hero_background.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background: linear-gradient(#912f41, #0a0a08);
     padding-top: 80%;
     width: 100%;
     position: absolute;
@@ -137,8 +141,8 @@ svg{
     margin-top:16%;
 }
 #contact_button{
-    padding-left:2.5rem;
-    padding-right: 2.5rem;
+    padding-left:2rem;
+    padding-right: 2rem;
     background-color: transparent !important;
     border-color: color(secondary-light,base);
 }
@@ -146,6 +150,12 @@ svg{
     background-color: color(secondary-light, dark) !important;
     color: color(main-dark, light);
     border-color: color(main-dark, light);
+}
+.jumbo-title{
+    color: color(main-light, base);
+    text-align: left;
+    visibility: hidden;
+    position: absolute;
 }
 
 
@@ -207,10 +217,15 @@ svg{
     #table_svg_animation{
         margin-top: 0rem;
     }
+    .jumbo-title{
+        color: color(main-light, base);
+        visibility: initial;
+        position: initial;
+    }
  }
  @media (min-width: 700px) {
      .jumbotron-text-column{
-         top:31%;
+         top: 23%;
          left: 12%;
      }
   }

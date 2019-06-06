@@ -1661,9 +1661,14 @@ nav > a {
   max-width: 845px;
 }
 
+#hero_items_wrap {
+  margin: auto;
+}
+
 #top_background {
-  background: url("assets/images/hero_background.png") no-repeat center center fixed;
   background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(#912f41), to(#0a0a08));
+  background: linear-gradient(#912f41, #0a0a08);
   padding-top: 80%;
   width: 100%;
   position: absolute;
@@ -1703,8 +1708,8 @@ svg {
 }
 
 #contact_button {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-color: transparent !important;
   border-color: #e8ebee;
 }
@@ -1713,6 +1718,13 @@ svg {
   background-color: #bcc5cd !important;
   color: #35352a;
   border-color: #35352a;
+}
+
+.jumbo-title {
+  color: white;
+  text-align: left;
+  visibility: hidden;
+  position: absolute;
 }
 
 /*Projects Section*/
@@ -1772,11 +1784,16 @@ svg {
   #table_svg_animation {
     margin-top: 0rem;
   }
+  .jumbo-title {
+    color: white;
+    visibility: initial;
+    position: initial;
+  }
 }
 
 @media (min-width: 700px) {
   .jumbotron-text-column {
-    top: 31%;
+    top: 23%;
     left: 12%;
   }
 }
