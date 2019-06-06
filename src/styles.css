@@ -1668,6 +1668,7 @@ nav > a {
 #hero_section {
   padding: 0;
   position: relative;
+  max-width: 845px;
 }
 
 #top_background {
@@ -1699,8 +1700,10 @@ svg {
 .jumbotron-text-column {
   position: absolute;
   left: 7%;
-  top: 4%;
   z-index: 10;
+  top: 27%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #table_svg_animation {
@@ -1773,7 +1776,7 @@ svg {
 
 @media (min-width: 700px) {
   .jumbotron-text-column {
-    top: 20%;
+    top: 31%;
     left: 12%;
   }
 }

@@ -100,6 +100,7 @@ $enabled-rounded: false;
 #hero_section{
     padding:0;
     position: relative;
+    max-width: 845px;
 }
 #top_background{
     //background: color(main-dark, base);
@@ -130,8 +131,11 @@ svg{
 .jumbotron-text-column{
     position: absolute;
     left: 7%;
-    top: 4%;
+    //top: 4%; 
     z-index: 10;
+    top: 27%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 #table_svg_animation{
     height: auto;
@@ -187,6 +191,10 @@ svg{
 }
 
 /*QUERIES*/
+@media (orientation : landscape){
+    #table_svg_animation{
+    }
+}
 @media (min-width: 470px){
     #top_background{
         padding-top: 50%;
@@ -202,7 +210,7 @@ svg{
  }
  @media (min-width: 700px) {
      .jumbotron-text-column{
-         top:20%;
+         top:31%;
          left: 12%;
      }
   }
