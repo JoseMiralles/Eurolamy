@@ -59,6 +59,7 @@ html{
 }
 body{
     background: color(main-light, base); 
+    position: relative;
 }
 button{
     border-radius: 0rem;
@@ -66,7 +67,6 @@ button{
 p{
     text-align: left;
     line-height: 1.35 !important;
-    padding-left: 0.4rem;
 }
 
 .btn-primary{
@@ -93,24 +93,26 @@ nav>a{
 $enabled-rounded: false;
 
 /*Navigation bar stuff*/
-
+#top_navigation_bar{
+}
 
 /*Hero jumbotron stuff*/
 #hero_section{
     padding:0;
     position: relative;
 }
-#relative_background{
+#top_background{
     //background: color(main-dark, base);
     background: url('assets/images/hero_background.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 16rem;
+    padding-top: 80%;
     width: 100%;
-    position: relative;
+    position: absolute;
     left:0;
+    top:0;
 }
 .svg_canvas{
 	height:100%;
@@ -126,24 +128,22 @@ svg{
     background-color: transparent;
 }
 .jumbotron-text-column{
-    margin-top: 0.5rem;
-    margin-left: 4%;
-    width:50%;
+    position: absolute;
+    left: 7%;
+    top: 4%;
+    z-index: 10;
 }
 #table_svg_animation{
-    position: absolute;
     height: auto;
-    width: 65%;
-    max-width: 420px;
-    top: 4rem;
-    right: 0;
+    width: 100%;
+    margin-top:16%;
 }
 
 
 /*Projects Section*/
 #portfolio_top_wrapper{
     min-height: 400px;
-    margin-top: 6rem;
+    margin-top: 2rem;
 }
 .portfolio_card{
     background: color(secondary-light, base);
@@ -187,49 +187,36 @@ svg{
 }
 
 /*QUERIES*/
+@media (min-width: 470px){
+    #top_background{
+        padding-top: 50%;
+    }
+}
 @media (min-width: 550px) {
-    #portfolio_top_wrapper{
-        margin-top: 7rem;
-    }
     #table_svg_animation{
-        width: 52%;
-        top: -1rem;
-        right: 7%;
+        margin-top: 0rem;
     }
-    .jumbotron-text-column {
-        margin-top: 2rem;
-        margin-left: 7%;
-        width: 41%;
-    }
-    #relative_background {
-        height: 19rem;
+    #contact_button{
+        width: 20rem;
     }
  }
- @media (min-width: 750px) {
-    #hero_items_wrap{
-        position: absolute;
-        width: 50rem;
-        margin-left: 50%;
-        transform:translateX(-50%);
-    }
-    #table_svg_animation{
-        top: -3rem;
-    }
-    #relative_background {
-        height: 22rem;
-    }
+ @media (min-width: 700px) {
+     .jumbotron-text-column{
+         top:20%;
+         left: 12%;
+     }
   }
   @media (min-width: 1120px) {
-    #table_svg_animation{
-        width: 52%;
-        top: -4rem;
-        right: 7%;
-    }
-    body{
+    body, #top_background{
         width:1120px;
         margin: 0 auto;
     }
     html{
         background-color: color(main-light, dark);
     }
+    .jumbotron-text-column{
+        top: 35%;
+        left: 10%;
+    }
+    
   }
