@@ -1705,6 +1705,7 @@ svg {
   height: auto;
   width: 100%;
   margin-top: 16%;
+  overflow: visible;
 }
 
 #table_svg_animation svg {
