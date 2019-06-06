@@ -70,31 +70,25 @@ p{
 }
 
 .btn-primary{
-    background-color: color(main-accent, base) !important;
-    border-color: color(main-accent, base) !important;
+    //background-color: color(main-accent, base) !important;
+    //border-color: color(main-accent, base) !important;
     //max-width: 15rem;
-}
-.btn:active{
-    background-color: color(main-accent, dark) !important;
 }
 
 #logo{
     height: 1rem;
 }
+
+
 nav>a{
     transform:translateX(-50%);
     margin-left: 50%;
 }
-
 .navbar{
     height: 3.5rem;
 }
 
 $enabled-rounded: false;
-
-/*Navigation bar stuff*/
-#top_navigation_bar{
-}
 
 /*Hero jumbotron stuff*/
 #hero_section{
@@ -141,6 +135,17 @@ svg{
     height: auto;
     width: 100%;
     margin-top:16%;
+}
+#contact_button{
+    padding-left:2.5rem;
+    padding-right: 2.5rem;
+    background-color: transparent !important;
+    border-color: color(secondary-light,base);
+}
+#contact_button:active{
+    background-color: color(secondary-light, dark) !important;
+    color: color(main-dark, light);
+    border-color: color(main-dark, light);
 }
 
 
@@ -192,8 +197,6 @@ svg{
 
 /*QUERIES*/
 @media (orientation : landscape){
-    #table_svg_animation{
-    }
 }
 @media (min-width: 470px){
     #top_background{
@@ -203,9 +206,6 @@ svg{
 @media (min-width: 550px) {
     #table_svg_animation{
         margin-top: 0rem;
-    }
-    #contact_button{
-        width: 20rem;
     }
  }
  @media (min-width: 700px) {

@@ -1640,15 +1640,6 @@ p {
   line-height: 1.35 !important;
 }
 
-.btn-primary {
-  background-color: #923041 !important;
-  border-color: #923041 !important;
-}
-
-.btn:active {
-  background-color: #581d27 !important;
-}
-
 #logo {
   height: 1rem;
 }
@@ -1663,7 +1654,6 @@ nav > a {
   height: 3.5rem;
 }
 
-/*Navigation bar stuff*/
 /*Hero jumbotron stuff*/
 #hero_section {
   padding: 0;
@@ -1710,6 +1700,19 @@ svg {
   height: auto;
   width: 100%;
   margin-top: 16%;
+}
+
+#contact_button {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: transparent !important;
+  border-color: #e8ebee;
+}
+
+#contact_button:active {
+  background-color: #bcc5cd !important;
+  color: #35352a;
+  border-color: #35352a;
 }
 
 /*Projects Section*/
@@ -1768,9 +1771,6 @@ svg {
 @media (min-width: 550px) {
   #table_svg_animation {
     margin-top: 0rem;
-  }
-  #contact_button {
-    width: 20rem;
   }
 }
 
