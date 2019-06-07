@@ -1,63 +1,16 @@
 $(document).ready(function () {
     var controller = new ScrollMagic.Controller();
 
-    //ShowDeskAnimation();
-    //AnimateComputers();
-    AddDeskScrollAnimation();
+    /*Show the intial animation and then
+    activated the scrill animation to
+    avoid timeline issues.*/
+    ShowDeskAnimation();
     IntroduceButton();
 
     console.log("READY FUNC ENDED");
 });
 
-//Intro and other animations for the computers.
-var AnimateComputers = function(){
-    const tweenAnimIn = new TimelineMax();
-    var itemName = "";
-    const xpos = -100, ypos = 70;
-    for (i = 8; i <= 11; i++) {
-        itemName = "#OD" + i;
-        tweenAnimIn.from(itemName, 0.05, {
-            x:xpos,
-            y:ypos,
-            autoAlpha: 0,
-            ease:Expo.easeOut
-        });
-    }
-};
-
-///Shows the office desk animation immediately.
-var ShowDeskAnimation = function(){
-    const tweenAnimIn = new TimelineMax();
-    const tweenAnimIn2 = new TimelineMax();
-    const tweenAnimIn3 = new TimelineMax();
-    var itemName = "";
-    const xpos = -100, ypos = -70;
-    for (i = 1; i <= 11; i++) {
-        itemName = "#OD" + i;
-        tweenAnimIn.from(itemName, 0.1, {
-            x:xpos,
-            y:ypos,
-            autoAlpha: 0,
-            ease:Expo.easeOut
-        });
-        itemName = "#OD" + (i + 1);
-        tweenAnimIn2.from(itemName, 0.2, {
-            x:xpos,
-            y:ypos,
-            autoAlpha: 0,
-            ease:Expo.easeOut
-        });
-        itemName = "#OD" + (i + 2);
-        tweenAnimIn3.from(itemName, 0.3, {
-            x:xpos,
-            y:ypos,
-            autoAlpha: 0,
-            ease:Expo.easeOut
-        });
-        i+=2;
-    }
-};
-
+/*Button animation*/
 var IntroduceButton = function(){
     const tweenAnimIn = new TimelineMax();
     tweenAnimIn.from("#contact_button", 3, {
@@ -67,6 +20,27 @@ var IntroduceButton = function(){
     });
 };
 
+/*HERO ANIMATIONS*/
+///Shows the office desk animation immediately.
+var ShowDeskAnimation = function(){
+    const tweenAnimIn = new TimelineMax();
+    //const tweenAnimIn2 = new TimelineMax();
+    //const tweenAnimIn3 = new TimelineMax();
+    var itemName = "";
+    const xpos = -100, ypos = 70;
+    for (i = 1; i <= 11; i++) {
+        itemName = "#OD" + i;
+        tweenAnimIn.from(itemName, 2, {
+            x:xpos,
+            y:ypos,
+            autoAlpha: 0,
+            ease:Expo.easeOut
+        },"-=1.7").eventCallback("onComplete", function(){
+            /*Add the scroll animation untill the first animation is done*/
+            AddDeskScrollAnimation();
+        });
+    }
+};
 ///Adds the scroll animation for the desk svg.
 var AddDeskScrollAnimation = function(){
     const triggerElement ='#table_animation_trigger';
