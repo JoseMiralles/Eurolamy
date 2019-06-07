@@ -22,7 +22,7 @@ $colors: (
         base: #0a0a08,
         light: lighten(#0a0a08, 15%),
         dark: darken(#0a0a08, 15%),
-        trans: transparentize(#0a0a08, 0.5)
+        trans: transparentize(#0a0a08, 0.2)
     ),
     main-light: (
         base: white,
@@ -97,7 +97,8 @@ $enabled-rounded: false;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background: linear-gradient(color(main-accent,base),color(main-dark,base));
+    background-repeat: no-repeat;
+    background: linear-gradient(color(main-accent,base),color(main-dark, base));
     height: 42vh;
     max-height: 30rem;
     width: 100%;
@@ -147,7 +148,6 @@ svg{
     padding-right: 2rem;
     background-color: transparent !important;
     border-color: color(secondary-light,base);
-    opacity: 0.2;
 }
 #contact_button:active{
     background-color: color(secondary-light, dark) !important;
@@ -175,13 +175,35 @@ svg{
     //color: color(main-light, base);
 }
 .portfolio_card_header{
-    background: color(main-dark, base);
+    background: color(main-dark, light);
     color: color(main-light, base);
-    position: absolute;
-    left: 0;
-    top: -1.5rem;
-    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
     border-radius: 0rem !important;
+    font-weight: lighter;
+}
+
+
+.portfolio_card_image_wrapper{
+    height: 17rem;
+    position: relative;
+    overflow: hidden;
+}
+.portfolio_image_prlx{
+    height: 160%;
+    width: 100%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top:0;
+    z-index: 1;
+}
+
+
+.portfolio_image{
+    height: 17rem;
+    max-height: 50vh;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
 }
 #portfolio_button{
     color: color(main-dark, base);
@@ -211,16 +233,20 @@ svg{
 }
 .contact_card_header{
     background: none;
-    font-style: oblique;
 }
 .contact_item_card{
     border:none;
     background:color(main-light,base);
-    border-radius: 0rem;
-    border-top: solid color(main-accent, light) 0.5rem;
+    border-radius: 0.5rem;
+    border: solid color(main-accent, base) 0.7rem;
+    margin-bottom: 1rem;
 }
 #whatsapp_button{
     background-color: #006e00;
+    color:white;
+}
+#facebook_button{
+    background-color: #3866ac;
     color:white;
 }
 #whatsapp_svg{
@@ -255,6 +281,9 @@ svg{
             //margin:0.0rem;
             //padding:0.0rem;
         }
+    }
+    #top_background{
+        height: 50vh;
     }
 }
 @media (min-width: 850px){

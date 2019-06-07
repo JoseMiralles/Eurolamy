@@ -1663,6 +1663,7 @@ nav > a {
 
 #top_background {
   background-size: cover;
+  background-repeat: no-repeat;
   background: -webkit-gradient(linear, left top, left bottom, from(#923041), to(#0a0a08));
   background: linear-gradient(#923041, #0a0a08);
   height: 42vh;
@@ -1721,7 +1722,6 @@ svg {
   padding-right: 2rem;
   background-color: transparent !important;
   border-color: #e8ebee;
-  opacity: 0.2;
 }
 
 #contact_button:active {
@@ -1749,13 +1749,34 @@ svg {
 }
 
 .portfolio_card_header {
-  background: #0a0a08;
+  background: #35352a;
   color: white;
-  position: absolute;
-  left: 0;
-  top: -1.5rem;
-  padding: 0.3rem 1.5rem 0.3rem 1.5rem;
   border-radius: 0rem !important;
+  font-weight: lighter;
+}
+
+.portfolio_card_image_wrapper {
+  height: 17rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio_image_prlx {
+  height: 160%;
+  width: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.portfolio_image {
+  height: 17rem;
+  max-height: 50vh;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 50% !important;
 }
 
 #portfolio_button {
@@ -1784,18 +1805,23 @@ svg {
 
 .contact_card_header {
   background: none;
-  font-style: oblique;
 }
 
 .contact_item_card {
   border: none;
   background: white;
-  border-radius: 0rem;
-  border-top: solid #c44b60 0.5rem;
+  border-radius: 0.5rem;
+  border: solid #923041 0.7rem;
+  margin-bottom: 1rem;
 }
 
 #whatsapp_button {
   background-color: #006e00;
+  color: white;
+}
+
+#facebook_button {
+  background-color: #3866ac;
   color: white;
 }
 
@@ -1830,6 +1856,9 @@ svg {
 @media (max-width: 400px) {
   .jumbotron-fluid h5, .jumbotron-fluid p {
     font-size: 0.8rem !important;
+  }
+  #top_background {
+    height: 50vh;
   }
 }
 

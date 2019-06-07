@@ -1,20 +1,51 @@
 $(document).ready(function () {
-
-    var controller = new ScrollMagic.Controller();
     /*Show the intial animation and then
     activated the scrill animation to
     avoid timeline issues.*/
     ShowDeskAnimation();
 
+    AddParalax("#port_target_1", "#port_trigger_1");
+    AddParalax("#port_target_2", "#port_trigger_2");
+    AddParalax("#port_target_3", "#port_trigger_3");
+
     console.log("READY FUNC ENDED");
 });
+
+var AddParalax = function(targetElementID, triggerElementID){
+    const controller = new ScrollMagic.Controller();
+    var slideParalaxScene = new ScrollMagic.Scene({
+        duration: '100%',
+        triggerElement: triggerElementID,
+        triggerHook: 1
+    }).setTween(TweenMax.from(targetElementID, 1,{
+        y: '-60%',
+        scale: 1.2,
+        ease: Power0.easeNone
+    }))
+    .addTo(controller);
+}
+
+/*Scrolls to the given element's position*/
+var ScrollToElement = function(targetElementID){
+    var controller = new ScrollMagic.Controller();
+    // change behaviour of controller to animate scroll instead of jump
+	controller.scrollTo(function (newpos) {
+		TweenMax.to(window, 4, {scrollTo: {y: newpos}});
+	});
+    controller.scrollTo(targetElementID);
+}
 
 /*Button animation*/
 var IntroduceButton = function(){
     const tweenAnimIn = new TimelineMax();
-    tweenAnimIn.to("#contact_button", 2, {
-        autoAlpha: 1,
-        ease:Bounce.easeOut
+    tweenAnimIn
+    .to("#contact_button", 1, {
+        x: 50,
+        ease: Expo.easeOut
+    })
+    .to("#contact_button", 1, {
+        x: 0,
+        ease: Bounce.easeOut
     });
 };
 

@@ -40,13 +40,13 @@
         <section id="hero_section" class="container-fluid">
             <div id="hero_items_wrap" class="row justify-content-end">
                 <!--HERO: Text and button-->
-                <div class="col-8 jumbotron-text-column">
+                <div class="col-6 jumbotron-text-column">
                     <div class="jumbotron-fluid text-center">
                         <h5 class="jumbo-title">No importa el presupuesto</h5>
                         <p class="text-light font-weight-light">Diseño profesional y personalizado, adaptádo a su
                             presupuesto.
                         </p>
-                        <button id="contact_button" type="button"
+                        <button onclick="ScrollToElement('#contact_section')" id="contact_button" type="button"
                             class="btn btn-primary float-left rounded-1 shadow-none">contactar</button>
                     </div>
                 </div>
@@ -444,10 +444,12 @@
         <!--Projects Section-->
         <section id="portfolio_top_wrapper" class="container-fluid">
             <div class="row">
-                <div class="col-sm-6">
-                    <div class="card portfolio_card">
-                        <div class="card-header portfolio_card_header">Company name</div>
-                        <img class="card-img-top" src="assets/images/office_rendering.jpg" alt="Past projects">
+                <div  class="col-sm-6">
+                    <div id="port_trigger_1" class="card portfolio_card">
+                        <div class="card-header portfolio_card_header">Officinas G&T Continental</div>
+                        <div class="portfolio_card_image_wrapper">
+                            <div id="port_target_1" class="card-img-top portfolio_image_prlx" style="background:url('assets/images/port-1.jpg')"></div>
+                        </div>
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of
@@ -455,10 +457,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div id="port_trigger_2" class="col-sm-6">
                     <div class="card portfolio_card">
-                        <div class="card-header portfolio_card_header">Company name</div>
-                        <img class="card-img-top" src="assets/images/office_rendering.jpg" alt="Past projects">
+                        <div class="card-header portfolio_card_header">INTEGRA Medical Center</div>
+                        <div class="portfolio_card_image_wrapper">
+                            <div id="port_target_2" class="card-img-top portfolio_image_prlx" style="background:url('assets/images/port-2.jpg')"></div>
+                        </div>
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of
@@ -466,6 +470,20 @@
                         </div>
                     </div>
                 </div>
+                <div id="port_trigger_3" class="col-sm-6">
+                    <div class="card portfolio_card">
+                        <div class="card-header portfolio_card_header">INTEGRA Medical Center</div>
+                        <div class="portfolio_card_image_wrapper">
+                            <div id="port_target_3" class="card-img-top portfolio_image_prlx" style="background:url('assets/images/port-3.jpg')"></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--LINK TO OUTER PORTFOLIO-->
                 <div class="col-sm-6">
                     <div class="card portfolio_card">
                         <div class="card-header portfolio_card_header">Otros projectos</div>
@@ -491,15 +509,25 @@
             </div>
             <!--Contact items-->
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm">
                     <div class="card contact_item_card">
-                        <div class="card-header contact_card_header">Contactar Por Whatsapp</div>
+                        <div class="card-header contact_card_header">Mandenos un mensaje atravez de Whatsapp.</div>
                         <div class="card-body">
-
-                            <p class="card-text">Comienze una conversacion con nosotros instantaneamente desde su
-                                celular.</p>
-                            <button id="whatsapp_button" type="button"
-                                class="contact_button btn btn-link btn-block rounded-1 shadow-none">Whatsapp</button>
+                            <a
+                                href="https://wa.me/+50250006820?text=I'm%20Hola,%20quiziera%20saber%20mas%20informacion%20acerca%20de%20sus%20servicios.">
+                                <button id="whatsapp_button" type="button"
+                                    class="contact_button btn btn-link btn-block rounded-1 shadow-none">Contactar por
+                                    Whatsapp</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card contact_item_card">
+                        <div class="card-header contact_card_header">Mandenos un mesaje directo por Facebook.</div>
+                        <div class="card-body">
+                            <button id="facebook_button" type="button"
+                                class="contact_button btn btn-link btn-block rounded-1 shadow-none">Facebook</button>
                         </div>
                     </div>
                 </div>
@@ -523,6 +551,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/ScrollToPlugin.min.js"></script>
     <!--Mine-->
     <script src='scripts.js'></script>
 </body>
