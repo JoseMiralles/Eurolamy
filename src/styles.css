@@ -1631,10 +1631,6 @@ body {
   position: relative;
 }
 
-button {
-  border-radius: 0rem;
-}
-
 p {
   text-align: left;
   line-height: 1.35 !important;
@@ -1658,7 +1654,7 @@ nav > a {
 #hero_section {
   padding: 0;
   position: relative;
-  max-width: 845px;
+  max-width: 1118px;
 }
 
 #hero_items_wrap {
@@ -1667,9 +1663,10 @@ nav > a {
 
 #top_background {
   background-size: cover;
-  background: -webkit-gradient(linear, left top, left bottom, from(#912f41), to(#0a0a08));
-  background: linear-gradient(#912f41, #0a0a08);
+  background: -webkit-gradient(linear, left top, left bottom, from(#923041), to(#0a0a08));
+  background: linear-gradient(#923041, #0a0a08);
   height: 42vh;
+  max-height: 30rem;
   width: 100%;
   position: absolute;
   left: 0;
@@ -1706,10 +1703,12 @@ svg {
   width: 100%;
   margin-top: 16%;
   overflow: visible;
+  padding-right: 0rem;
 }
 
 #table_svg_animation svg {
-  max-height: 85vh;
+  width: 45vw;
+  float: right;
 }
 
 #table_animation_trigger {
@@ -1722,6 +1721,7 @@ svg {
   padding-right: 2rem;
   background-color: transparent !important;
   border-color: #e8ebee;
+  opacity: 0.2;
 }
 
 #contact_button:active {
@@ -1769,16 +1769,43 @@ svg {
 /*Contact section*/
 #contact_section {
   background-size: cover;
-  min-height: 200px;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#923041), to(#581d27));
+  background: linear-gradient(#923041, #581d27);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 #contact_section_title {
   text-align: center;
+  color: #e8ebee;
+  padding-bottom: 3rem;
+}
+
+.contact_card_header {
+  background: none;
+  font-style: oblique;
+}
+
+.contact_item_card {
+  border: none;
+  background: white;
+  border-radius: 0rem;
+  border-top: solid #c44b60 0.5rem;
 }
 
 #whatsapp_button {
   background-color: #006e00;
   color: white;
+}
+
+#whatsapp_svg {
+  height: 5rem;
+}
+
+.whatsapp_svg {
+  margin-bottom: 1rem;
+  fill: #006e00;
 }
 
 /*QUERIES*/
@@ -1790,6 +1817,12 @@ svg {
         @media (min-width: 850px){
             height: 55vh !important;
         }*/
+  }
+}
+
+@media (orientation: portrait) {
+  #table_svg_animation svg {
+    width: 80vw;
   }
 }
 
@@ -1831,8 +1864,8 @@ svg {
 }
 
 @media (min-width: 1120px) {
-  body, #top_background {
-    width: 1120px;
+  .row {
+    max-width: 1120px !important;
     margin: 0 auto;
   }
   html {
@@ -1841,6 +1874,9 @@ svg {
   .jumbotron-text-column {
     top: 35%;
     left: 10%;
+  }
+  #table_svg_animation > svg {
+    max-height: 70vh;
   }
 }
 /*# sourceMappingURL=styles.css.map */

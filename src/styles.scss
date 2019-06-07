@@ -61,18 +61,9 @@ body{
     background: color(main-light, base); 
     position: relative;
 }
-button{
-    border-radius: 0rem;
-}
 p{
     text-align: left;
     line-height: 1.35 !important;
-}
-
-.btn-primary{
-    //background-color: color(main-accent, base) !important;
-    //border-color: color(main-accent, base) !important;
-    //max-width: 15rem;
 }
 
 #logo{
@@ -94,7 +85,7 @@ $enabled-rounded: false;
 #hero_section{
     padding:0;
     position: relative;
-    max-width: 845px;
+    max-width: 1118px;
 }
 #hero_items_wrap{
     margin: auto;
@@ -106,9 +97,9 @@ $enabled-rounded: false;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background: linear-gradient(#912f41, #0a0a08);
-    //padding-top: 80%;
+    background: linear-gradient(color(main-accent,base),color(main-dark,base));
     height: 42vh;
+    max-height: 30rem;
     width: 100%;
     position: absolute;
     left:0;
@@ -141,8 +132,10 @@ svg{
     width: 100%;
     margin-top:16%;
     overflow: visible;
+    padding-right: 0rem;
     svg{
-        max-height: 85vh;
+        width: 45vw;
+        float: right;
     }
 }
 #table_animation_trigger{
@@ -154,6 +147,7 @@ svg{
     padding-right: 2rem;
     background-color: transparent !important;
     border-color: color(secondary-light,base);
+    opacity: 0.2;
 }
 #contact_button:active{
     background-color: color(secondary-light, dark) !important;
@@ -204,14 +198,37 @@ svg{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 200px;
+    min-height: 100vh;
+    background:linear-gradient(
+        color(main-accent,base),color(main-accent,dark));
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 #contact_section_title{
     text-align: center;
+    color: color(secondary-light,base);
+    padding-bottom: 3rem;
+}
+.contact_card_header{
+    background: none;
+    font-style: oblique;
+}
+.contact_item_card{
+    border:none;
+    background:color(main-light,base);
+    border-radius: 0rem;
+    border-top: solid color(main-accent, light) 0.5rem;
 }
 #whatsapp_button{
     background-color: #006e00;
     color:white;
+}
+#whatsapp_svg{
+    height: 5rem;
+}
+.whatsapp_svg{
+    margin-bottom: 1rem;
+    fill: #006e00;
 }
 
 /*QUERIES*/
@@ -224,6 +241,11 @@ svg{
             height: 55vh !important;
         }*/
     }
+}
+@media (orientation: portrait){
+    #table_svg_animation svg {
+    width: 80vw;
+}
 }
 /*This is the only query that scales down*/
 @media(max-width: 400px ){
@@ -262,8 +284,8 @@ svg{
      }
   }
   @media (min-width: 1120px) {
-    body, #top_background{
-        width:1120px;
+    .row{
+        max-width:1120px !important;
         margin: 0 auto;
     }
     html{
@@ -273,5 +295,7 @@ svg{
         top: 35%;
         left: 10%;
     }
-    
+    #table_svg_animation > svg{
+        max-height: 70vh;
+    }
   }

@@ -1,11 +1,10 @@
 $(document).ready(function () {
-    var controller = new ScrollMagic.Controller();
 
+    var controller = new ScrollMagic.Controller();
     /*Show the intial animation and then
     activated the scrill animation to
     avoid timeline issues.*/
     ShowDeskAnimation();
-    IntroduceButton();
 
     console.log("READY FUNC ENDED");
 });
@@ -13,10 +12,9 @@ $(document).ready(function () {
 /*Button animation*/
 var IntroduceButton = function(){
     const tweenAnimIn = new TimelineMax();
-    tweenAnimIn.from("#contact_button", 3, {
-        y:-20,
-        autoAlpha: 0,
-        ease:Expo.easeOut
+    tweenAnimIn.to("#contact_button", 2, {
+        autoAlpha: 1,
+        ease:Bounce.easeOut
     });
 };
 
@@ -38,6 +36,7 @@ var ShowDeskAnimation = function(){
         },"-=1.7").eventCallback("onComplete", function(){
             /*Add the scroll animation untill the first animation is done*/
             AddDeskScrollAnimation();
+            IntroduceButton();
         });
     }
 };
