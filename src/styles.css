@@ -1666,7 +1666,7 @@ nav > a {
   background-repeat: no-repeat;
   background: -webkit-gradient(linear, left top, left bottom, from(#923041), to(#0a0a08));
   background: linear-gradient(#923041, #0a0a08);
-  height: 42vh;
+  height: 47vh;
   max-height: 30rem;
   width: 100%;
   position: absolute;
@@ -1750,7 +1750,6 @@ svg {
 .portfolio_card_header {
   background: #35352a;
   color: white;
-  border-radius: 0rem !important;
   font-weight: lighter;
 }
 

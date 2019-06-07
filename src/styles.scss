@@ -99,7 +99,7 @@ $enabled-rounded: false;
     background-size: cover;
     background-repeat: no-repeat;
     background: linear-gradient(color(main-accent,base),color(main-dark, base));
-    height: 42vh;
+    height: 47vh;
     max-height: 30rem;
     width: 100%;
     position: absolute;
@@ -177,7 +177,6 @@ svg{
 .portfolio_card_header{
     background: color(main-dark, light);
     color: color(main-light, base);
-    border-radius: 0rem !important;
     font-weight: lighter;
 }
 
