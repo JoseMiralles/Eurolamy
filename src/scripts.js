@@ -7,6 +7,8 @@ $(document).ready(function () {
     AddParalax("#port_target_1", "#port_trigger_1");
     AddParalax("#port_target_2", "#port_trigger_2");
     AddParalax("#port_target_3", "#port_trigger_3");
+    AddParalax("#port_target_4", "#port_trigger_4");
+    AddParalax("#port_target_5", "#port_trigger_5");
 
     console.log("READY FUNC ENDED");
 });
