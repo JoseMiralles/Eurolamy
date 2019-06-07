@@ -1669,7 +1669,7 @@ nav > a {
   background-size: cover;
   background: -webkit-gradient(linear, left top, left bottom, from(#912f41), to(#0a0a08));
   background: linear-gradient(#912f41, #0a0a08);
-  padding-top: 80%;
+  height: 42vh;
   width: 100%;
   position: absolute;
   left: 0;
@@ -1733,8 +1733,6 @@ svg {
 .jumbo-title {
   color: white;
   text-align: left;
-  visibility: hidden;
-  position: absolute;
 }
 
 /*Projects Section*/
@@ -1788,25 +1786,30 @@ svg {
   #top_background {
     height: 75vh !important;
     padding-top: 0rem !important;
+    /*
+        @media (min-width: 850px){
+            height: 55vh !important;
+        }*/
   }
 }
 
-@media (orientation: landscape) and (min-width: 850px) {
-  #top_background {
-    height: 55vh !important;
+/*This is the only query that scales down*/
+@media (max-width: 400px) {
+  .jumbotron-fluid h5, .jumbotron-fluid p {
+    font-size: 0.8rem !important;
   }
 }
 
 @media (min-width: 850px) {
-  #top_background {
-    height: 55vh !important;
-  }
+  /*#top_background{
+        height: 55vh !important;
+    }*/
 }
 
 @media (min-width: 470px) {
-  #top_background {
-    padding-top: 50%;
-  }
+  /*#top_background{
+        padding-top: 50%;
+    }*/
 }
 
 @media (min-width: 550px) {
