@@ -1712,6 +1712,11 @@ svg {
   max-height: 85vh;
 }
 
+#table_animation_trigger {
+  position: absolute;
+  top: 55vh;
+}
+
 #contact_button {
   padding-left: 2rem;
   padding-right: 2rem;
