@@ -4,7 +4,7 @@ $(document).ready(function () {
     avoid timeline issues.*/
     ShowDeskAnimation();
 
-    AddParalax("#port_target_1", "#port_trigger_1");
+    AddParalax("#port_target_1", "#port_trigger_1", "#prot_shroud_1");
     AddParalax("#port_target_2", "#port_trigger_2");
     AddParalax("#port_target_3", "#port_trigger_3");
     AddParalax("#port_target_4", "#port_trigger_4");
@@ -13,47 +13,57 @@ $(document).ready(function () {
     console.log("READY FUNC ENDED");
 });
 
-var AddParalax = function(targetElementID, triggerElementID){
+var AddParalax = function (targetElementID, triggerElementID, shroudElementID) {
     const controller = new ScrollMagic.Controller();
+
+    var parallaxTl = new TimelineMax();
+    if (shroudElementID != null){
+        parallaxTl
+            .to(shroudElementID, 1, {
+                opacity: 0,
+                ease: Power0.easeOut
+            }, 2);
+    }
+    parallaxTl.from(targetElementID, 4, {
+        y: '-100%',
+        scale: 1.2,
+        ease: Power0.easeNone
+    }, 0);
+
     var slideParalaxScene = new ScrollMagic.Scene({
         duration: '100%',
         triggerElement: triggerElementID,
         triggerHook: 1
-    }).setTween(TweenMax.from(targetElementID, 1,{
-        y: '-60%',
-        scale: 1.2,
-        ease: Power0.easeNone
-    }))
-    .addTo(controller);
+    }).setTween(parallaxTl).addTo(controller);
 }
 
 /*Scrolls to the given element's position*/
-var ScrollToElement = function(targetElementID){
+var ScrollToElement = function (targetElementID) {
     var controller = new ScrollMagic.Controller();
     // change behaviour of controller to animate scroll instead of jump
-	controller.scrollTo(function (newpos) {
-		TweenMax.to(window, 4, {scrollTo: {y: newpos, ease:Power1.easeIn}});
-	});
+    controller.scrollTo(function (newpos) {
+        TweenMax.to(window, 7, { scrollTo: { y: newpos, ease: Power1.easeIn } });
+    });
     controller.scrollTo(targetElementID);
 }
 
 /*Button animation*/
-var IntroduceButton = function(){
+var IntroduceButton = function () {
     const tweenAnimIn = new TimelineMax();
     tweenAnimIn
-    .to("#contact_button", 1, {
-        x: 50,
-        ease: Expo.easeOut
-    })
-    .to("#contact_button", 1, {
-        x: 0,
-        ease: Bounce.easeOut
-    });
+        .to("#contact_button", 1, {
+            x: 50,
+            ease: Expo.easeOut
+        })
+        .to("#contact_button", 1, {
+            x: 0,
+            ease: Bounce.easeOut
+        });
 };
 
 /*HERO ANIMATIONS*/
 ///Shows the office desk animation immediately.
-var ShowDeskAnimation = function(){
+var ShowDeskAnimation = function () {
     const tweenAnimIn = new TimelineMax();
     //const tweenAnimIn2 = new TimelineMax();
     //const tweenAnimIn3 = new TimelineMax();
@@ -62,11 +72,11 @@ var ShowDeskAnimation = function(){
     for (i = 1; i <= 11; i++) {
         itemName = "#OD" + i;
         tweenAnimIn.from(itemName, 2, {
-            x:xpos,
-            y:ypos,
+            x: xpos,
+            y: ypos,
             autoAlpha: 0,
-            ease:Back.easeOut.config(2)
-        },"-=1.7").eventCallback("onComplete", function(){
+            ease: Back.easeOut.config(2)
+        }, "-=1.7").eventCallback("onComplete", function () {
             /*Add the scroll animation untill the first animation is done*/
             AddDeskScrollAnimation();
             IntroduceButton();
@@ -74,13 +84,13 @@ var ShowDeskAnimation = function(){
     }
 };
 ///Adds the scroll animation for the desk svg.
-var AddDeskScrollAnimation = function(){
-    const triggerElement ='#table_animation_trigger';
+var AddDeskScrollAnimation = function () {
+    const triggerElement = '#table_animation_trigger';
     const controller = new ScrollMagic.Controller();
 
-    for(i = 1; i <= 11; i++){
-        new ScrollMagic.Scene({triggerElement: triggerElement,duration:800})
-        .setTween("#OD"+i, {y:(0-(i*80)), autoAlpha:0})
-        .addTo(controller);
+    for (i = 1; i <= 11; i++) {
+        new ScrollMagic.Scene({ triggerElement: triggerElement, duration: 800 })
+            .setTween("#OD" + i, { y: (0 - (i * 80)), autoAlpha: 0 })
+            .addTo(controller);
     }
 };
