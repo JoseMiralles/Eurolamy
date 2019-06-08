@@ -48,7 +48,7 @@ var ScrollToElement = function (targetElementID) {
     var controller = new ScrollMagic.Controller();
     // change behaviour of controller to animate scroll instead of jump
     controller.scrollTo(function (newpos) {
-        TweenMax.to(window, 7, { scrollTo: { y: newpos, ease: Power1.easeIn } });
+        TweenMax.to(window, 5, { scrollTo: { y: newpos, ease: Power1.easeIn } });
     });
     controller.scrollTo(targetElementID);
 }
