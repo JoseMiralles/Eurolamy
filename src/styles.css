@@ -1720,8 +1720,8 @@ svg {
 #contact_button {
   padding-left: 2rem;
   padding-right: 2rem;
-  background-color: transparent !important;
-  border-color: #e8ebee;
+  background-color: #923041 !important;
+  border-color: #c44b60;
 }
 
 #contact_button:active {
@@ -1810,7 +1810,7 @@ svg {
   border: none;
   background: white;
   border-radius: 0.5rem;
-  border: solid #923041 0.7rem;
+  border: solid #923041 0.4rem;
   margin-bottom: 1rem;
 }
 

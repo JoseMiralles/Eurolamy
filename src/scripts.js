@@ -32,7 +32,7 @@ var ScrollToElement = function(targetElementID){
     var controller = new ScrollMagic.Controller();
     // change behaviour of controller to animate scroll instead of jump
 	controller.scrollTo(function (newpos) {
-		TweenMax.to(window, 4, {scrollTo: {y: newpos}});
+		TweenMax.to(window, 4, {scrollTo: {y: newpos, ease:Power1.easeIn}});
 	});
     controller.scrollTo(targetElementID);
 }
@@ -65,7 +65,7 @@ var ShowDeskAnimation = function(){
             x:xpos,
             y:ypos,
             autoAlpha: 0,
-            ease:Expo.easeOut
+            ease:Back.easeOut.config(2)
         },"-=1.7").eventCallback("onComplete", function(){
             /*Add the scroll animation untill the first animation is done*/
             AddDeskScrollAnimation();

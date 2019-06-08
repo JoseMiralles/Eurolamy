@@ -146,8 +146,8 @@ svg{
 #contact_button{
     padding-left:2rem;
     padding-right: 2rem;
-    background-color: transparent !important;
-    border-color: color(secondary-light,base);
+    background-color: color(main-accent, base) !important;
+    border-color: color(main-accent, light);
 }
 #contact_button:active{
     background-color: color(secondary-light, dark) !important;
@@ -238,7 +238,7 @@ svg{
     border:none;
     background:color(main-light,base);
     border-radius: 0.5rem;
-    border: solid color(main-accent, base) 0.7rem;
+    border: solid color(main-accent, base) 0.4rem;
     margin-bottom: 1rem;
 }
 #whatsapp_button{
