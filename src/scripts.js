@@ -25,6 +25,7 @@ var AddParalax = function (targetElementID, triggerElementID, shroudElementID) {
     if (shroudElementID != null){
         parallaxTl
             .to(shroudElementID, 1, {
+                y: -100,
                 opacity: 0,
                 ease: Power0.easeOut
             }, 2);
@@ -67,13 +68,13 @@ var BounceItemX = function (targetID, xpos) {
         return tweenAnimIn;
 };
 /*Bounces the given item to the specified y position and back*/
-var BounceItemY = function(targetID, ypos){
+var BounceItemY = function(targetID, ypos, delay){
     const tweenAnimIn = new TimelineMax();
     tweenAnimIn
     .to(targetID, 1,{
         y: ypos,
         ease: Expo.easeOut
-    })
+    },"+="+delay)
     .to(targetID, 1, {
         y: 0,
         ease: Bounce.easeOut
@@ -113,8 +114,8 @@ var ShowDeskAnimation = function () {
         }, "-=1.7").eventCallback("onComplete", function () {
             /*Add the scroll animation untill the first animation is done*/
             AddDeskScrollAnimation();
-            BounceItemX("#contact_button", 50).eventCallback("onComplete", 
-            BounceItemY("#previous_projects_text", 50));
+            BounceItemX("#contact_button", 50);
+            BounceItemY("#previous_projects_text", 50, 0.5);
         });
     }
 };

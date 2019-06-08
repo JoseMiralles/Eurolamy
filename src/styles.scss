@@ -98,7 +98,9 @@ $enabled-rounded: false;
     -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background: linear-gradient(color(main-accent,base),color(main-dark, base));
+    //background: linear-gradient(color(main-accent,base),color(main-dark, base));
+    //background: linear-gradient(color(main-accent,base),color(main-accent, dark));
+    background: linear-gradient(color(main-accent, base), color(main-accent,dark));
     height: 47vh;
     max-height: 30rem;
     width: 100%;
@@ -206,7 +208,7 @@ svg{
         position: absolute;
         top: 0%;
         left: 50%;
-        transform: translate(-50%, 0%);
+        transform: translateX(-50%);
         color: color(main-accent, base);
         text-align: center;
     }
@@ -254,17 +256,18 @@ svg{
     background: none;
 }
 .contact_item_card{
+    border-radius: 0rem;
     border:none;
     background:color(main-light,base);
-    border-radius: 0rem;
-    //border: solid color(main-accent, base) 0.4rem;
+    border: solid color(main-accent, base) 1rem;
     margin-bottom: 1rem;
     &:after{
         content: "";
-        border-bottom: solid color(main-light, dark) 0.4rem;
+        border-bottom: solid color(main-light, dark) 0.8rem;
     }
     .contact_card_image{
         height: 50vh;
+        margin: 1rem;
         -webkit-background-size: cover !important;
         -moz-background-size: cover !important;
         -o-background-size: cover !important;

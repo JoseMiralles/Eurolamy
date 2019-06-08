@@ -1664,8 +1664,8 @@ nav > a {
 #top_background {
   background-size: cover;
   background-repeat: no-repeat;
-  background: -webkit-gradient(linear, left top, left bottom, from(#923041), to(#0a0a08));
-  background: linear-gradient(#923041, #0a0a08);
+  background: -webkit-gradient(linear, left top, left bottom, from(#923041), to(#581d27));
+  background: linear-gradient(#923041, #581d27);
   height: 47vh;
   max-height: 30rem;
   width: 100%;
@@ -1784,8 +1784,8 @@ svg {
   position: absolute;
   top: 0%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0%);
-          transform: translate(-50%, 0%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   color: #923041;
   text-align: center;
 }
@@ -1835,19 +1835,21 @@ svg {
 }
 
 .contact_item_card {
+  border-radius: 0rem;
   border: none;
   background: white;
-  border-radius: 0rem;
+  border: solid #923041 1rem;
   margin-bottom: 1rem;
 }
 
 .contact_item_card:after {
   content: "";
-  border-bottom: solid #d9d9d9 0.4rem;
+  border-bottom: solid #d9d9d9 0.8rem;
 }
 
 .contact_item_card .contact_card_image {
   height: 50vh;
+  margin: 1rem;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
