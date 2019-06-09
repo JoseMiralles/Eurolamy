@@ -14,10 +14,21 @@ $(document).ready(function () {
     CreatFadeInScrollAnimation("#Whatsapp_card", "#Contact_card_trigger", 200, 400);
     CreatFadeInScrollAnimation("#facebook_card", "#Contact_card_trigger", 200, 200);
 
+    pinElementWithScroll("#site_wrapper", "#table_animation_trigger", 300);
+
     console.log("READY FUNC ENDED");
 
 });
 
+/*pins element so that it scroll for a while*/
+var pinElementWithScroll = function(targetID, triggerID, duration){
+    var scene = new ScrollMagic.Scene({
+        triggerElement: triggerID,
+        duration: duration,
+    }).setPin(targetID)
+    //.addIndicators({name: "1 (duration: 300)"})
+    .addTo(new ScrollMagic.Controller());
+}
 var AddParalax = function (targetElementID, triggerElementID, shroudElementID) {
     const controller = new ScrollMagic.Controller();
 
@@ -42,7 +53,6 @@ var AddParalax = function (targetElementID, triggerElementID, shroudElementID) {
         triggerHook: 1
     }).setTween(parallaxTl).addTo(controller);
 }
-
 /*Scrolls to the given element's position*/
 var ScrollToElement = function (targetElementID) {
     var controller = new ScrollMagic.Controller();
@@ -52,7 +62,6 @@ var ScrollToElement = function (targetElementID) {
     });
     controller.scrollTo(targetElementID);
 }
-
 /*Bounces the given item to the specified x position and back*/
 var BounceItemX = function (targetID, xpos) {
     const tweenAnimIn = new TimelineMax();
@@ -95,7 +104,6 @@ var CreatFadeInScrollAnimation = function(targetElementID, triggerElementID, ypo
         duration: duration})
         .setTween(parallaxTl).addTo(controller);
 }
-
 /*HERO ANIMATIONS*/
 ///Shows the office desk animation immediately.
 var ShowDeskAnimation = function () {
@@ -125,8 +133,8 @@ var AddDeskScrollAnimation = function () {
     const controller = new ScrollMagic.Controller();
 
     for (i = 1; i <= 11; i++) {
-        new ScrollMagic.Scene({ triggerElement: triggerElement, duration: 800 })
-            .setTween("#OD" + i, { y: (0 - (i * 80)), autoAlpha: 0 })
+        new ScrollMagic.Scene({ triggerElement: triggerElement, duration: 300 })
+            .setTween("#OD" + i, { y: (0 - (i * 20)), autoAlpha: 0 })
             .addTo(controller);
     }
 };
