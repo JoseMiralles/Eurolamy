@@ -14,7 +14,7 @@ $(document).ready(function () {
     CreatFadeInScrollAnimation("#Whatsapp_card", "#Contact_card_trigger", 200, 400);
     CreatFadeInScrollAnimation("#facebook_card", "#Contact_card_trigger", 200, 200);
 
-    pinElementWithScroll("#site_wrapper", "#table_animation_trigger", 300);
+    //pinElementWithScroll("#site_wrapper", "#table_animation_trigger", 300);
 
     console.log("READY FUNC ENDED");
 
