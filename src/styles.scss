@@ -167,7 +167,17 @@ svg{
 /*Projects Section*/
 #portfolio_top_wrapper{
     min-height: 400px;
+    margin: 0rem;
+    padding: 0rem;
     margin-top: 2rem;
+    .row{
+        margin: 0rem !important;
+        .col-md-12{
+            margin: 0rem !important;
+            padding: 0rem !important;
+            float: right;
+        }
+    }
 }
 .portfolio_card{
     background: color(secondary-light, base);
@@ -175,14 +185,36 @@ svg{
     border: none;
     //border-radius: 0rem;
     //color: color(main-light, base);
+    .card-body{
+        position: absolute;
+        z-index: 9;
+        background: color(main-dark, trans);
+        left: 50%;
+        width: 100% !important;
+         transform: translateX(-50%);
+        bottom: 4%;
+        *{
+            text-align: center;
+            color: white;
+        }
+    }
 }
 .portfolio_card_header{
-    background: color(main-dark, light);
+    background: color(main-accent, base);
     color: color(main-light, base);
     font-weight: lighter;
+    position: absolute;
+    z-index: 9;
+    top: 3%;
+    left: 0%;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    border-radius: 0rem 3rem 3rem 0rem !important;
+    box-shadow: 0px 3px 0px color(main-accent, dark);
 }
 .portfolio_card_image_wrapper{
-    height: 90vh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -226,6 +258,17 @@ svg{
     background-repeat: no-repeat !important;
     background-position: 50% 50% !important;
 }
+.portfolio_last_card{
+    margin-bottom: 22vh;
+    margin-top: 20vh;
+    border: none;
+    text-align: center;
+    .card-body{
+        .card-text{
+            text-align: center;
+        }
+    }
+}
 #portfolio_button{
     color: color(main-dark, base);
     border-color: color(main-dark, base);
@@ -246,6 +289,10 @@ svg{
         color(main-accent,base),color(main-accent,dark));
     padding-top: 3rem;
     padding-bottom: 3rem;
+    row{
+        padding: 0rem !important;
+        margin: 0rem !important;
+    }
 }
 #contact_section_title{
     text-align: center;
@@ -348,9 +395,11 @@ svg{
      }
   }
   @media (min-width: 1120px) {
-    .row{
-        max-width:1120px !important;
-        margin: 0 auto;
+    #contact_section{
+        .row{
+            max-width:1120px !important;
+            margin: 0 auto;
+        }
     }
     html{
         background-color: color(main-light, dark);

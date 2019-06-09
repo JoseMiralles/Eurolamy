@@ -1738,7 +1738,19 @@ svg {
 /*Projects Section*/
 #portfolio_top_wrapper {
   min-height: 400px;
+  margin: 0rem;
+  padding: 0rem;
   margin-top: 2rem;
+}
+
+#portfolio_top_wrapper .row {
+  margin: 0rem !important;
+}
+
+#portfolio_top_wrapper .row .col-md-12 {
+  margin: 0rem !important;
+  padding: 0rem !important;
+  float: right;
 }
 
 .portfolio_card {
@@ -1747,14 +1759,40 @@ svg {
   border: none;
 }
 
+.portfolio_card .card-body {
+  position: absolute;
+  z-index: 9;
+  background: rgba(10, 10, 8, 0.8);
+  left: 50%;
+  width: 100% !important;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 4%;
+}
+
+.portfolio_card .card-body * {
+  text-align: center;
+  color: white;
+}
+
 .portfolio_card_header {
-  background: #35352a;
+  background: #923041;
   color: white;
   font-weight: lighter;
+  position: absolute;
+  z-index: 9;
+  top: 3%;
+  left: 0%;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 0rem 3rem 3rem 0rem !important;
+  -webkit-box-shadow: 0px 3px 0px #581d27;
+          box-shadow: 0px 3px 0px #581d27;
 }
 
 .portfolio_card_image_wrapper {
-  height: 90vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -1806,6 +1844,17 @@ svg {
   background-position: 50% 50% !important;
 }
 
+.portfolio_last_card {
+  margin-bottom: 22vh;
+  margin-top: 20vh;
+  border: none;
+  text-align: center;
+}
+
+.portfolio_last_card .card-body .card-text {
+  text-align: center;
+}
+
 #portfolio_button {
   color: #0a0a08;
   border-color: #0a0a08;
@@ -1822,6 +1871,11 @@ svg {
   background: linear-gradient(#923041, #581d27);
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+#contact_section row {
+  padding: 0rem !important;
+  margin: 0rem !important;
 }
 
 #contact_section_title {
@@ -1933,7 +1987,7 @@ svg {
 }
 
 @media (min-width: 1120px) {
-  .row {
+  #contact_section .row {
     max-width: 1120px !important;
     margin: 0 auto;
   }
