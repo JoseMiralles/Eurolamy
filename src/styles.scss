@@ -306,13 +306,13 @@ svg{
     border-radius: 0rem;
     border:none;
     background:color(main-light,base);
-    border: solid color(main-accent, base) 1rem;
+    border: solid #862c3c 1rem;
     margin-bottom: 1rem;
-    &:after{
+    &:after {
         content: "";
         border-bottom: solid color(main-light, dark) 0.8rem;
     }
-    .contact_card_image{
+    .contact_card_image {
         height: 50vh;
         margin: 1rem;
         -webkit-background-size: cover !important;
