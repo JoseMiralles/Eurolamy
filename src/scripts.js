@@ -43,7 +43,7 @@ var AddParalax = function (targetElementID, triggerElementID, shroudElementID) {
     }
     parallaxTl.from(targetElementID, 4, {
         y: '-20%',
-        scale: 2,
+        scale: 1.2,
         ease: Power0.easeNone
     }, 0);
 
@@ -118,7 +118,7 @@ var ShowDeskAnimation = function () {
             x: xpos,
             y: ypos,
             autoAlpha: 0,
-            ease: Back.easeOut.config(2)
+            ease: Back.easeOut.config(0)
         }, "-=1.7").eventCallback("onComplete", function () {
             /*Add the scroll animation untill the first animation is done*/
             AddDeskScrollAnimation();
