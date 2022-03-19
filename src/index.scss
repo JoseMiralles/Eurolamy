@@ -1,0 +1,44 @@
+@import "./reset.css";
+@import "./components/values";
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro&display=swap');
+
+html {
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 22px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: transparentize(black, 0.9);
+    font-family: 'Source Sans Pro', sans-serif;
+
+    &:hover {
+        background-color: transparentize(black, 0.7);
+        cursor: pointer;
+    }
+
+    @media (max-width: $mobile-width) {
+        width: auto;
+    }
+}
+
+.next-section-indicator-wrapper{
+    height: 0px;
+}
+.next-section-indicator{
+    position: relative;
+    bottom: -100%;
+}
