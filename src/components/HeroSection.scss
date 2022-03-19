@@ -30,8 +30,17 @@
 
     @media (max-width: $mobile-width) {
         flex-direction: column;
+        justify-content: space-around;
         padding: 0px 45px;
     }
+}
+
+#hero-logo {
+    margin-bottom: 27px;
+}
+
+#hero-text {
+    margin-bottom: 55px;
 }
 
 #hero-links {

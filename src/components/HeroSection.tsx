@@ -13,15 +13,12 @@ const HeroSection = () => {
 
                 <div className="left">
                     <img
-                        id="top-logo-image"
+                        id="hero-logo"
                         src={logo}
                         alt="EUROLAMY"
                     />
-                    <br/>
 
-                    <p>{data.subText}</p>
-                    <br/>
-                    <br/>
+                    <p id="hero-text">{data.subText}</p>
 
                     <div id="hero-links">
                         <a
