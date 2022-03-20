@@ -7,22 +7,22 @@ import SlideShow from "./SlideShow";
 
 const HeroSection = () => {
 
-    const contactButtons = data.contactButtons.map(b => (
-        <a href={b.url} className="btn">
+    const contactButtons = data.contactButtons.map((b, i) => (
+        <a key={i} href={b.url} className="btn">
             {b.text}
         </a>
     ));
 
     return (
-        <section id="hero-section">
+        <section id="hero-section" className="brand-gradient-background">
 
             <div className="background">
-                <SlideShow images={data.slideShowImages}/>
+                {/* Add wireframe animation. */}
             </div>
 
             <div className="content">
 
-                <div className="left brand-gradient-background">
+                <div className="left blur-background">
                     <img src={logo} id="top-logo"/>
                     <p className="description">{data.subText}</p>
                     <div className="contact-list">

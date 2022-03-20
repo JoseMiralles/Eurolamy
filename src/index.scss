@@ -20,7 +20,6 @@ a {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: -1;
 
     img {
         width: 100%;
@@ -49,7 +48,7 @@ a {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 66px;
+        padding: 44px 77px;
     }
 }
 
@@ -69,8 +68,9 @@ a {
 }
 
 .blur-background {
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: transparentize($color: $color-dark, $amount: 0.9);
 }
 
 .btn {
