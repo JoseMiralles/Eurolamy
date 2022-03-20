@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { heroSection as data } from "../data";
 
-const HeroSlideShow = () => {
+interface IParams {
+    images: string[];
+}
+
+const SlideShow = ({images}: IParams) => {
 
     const [imageIndex, setImageIndex] = useState(4);
 
     useEffect(() => {
         setTimeout(() => {
-            const newIndex = (imageIndex + 1) % (data.slideShowImages.length - 1);
+            const newIndex = (imageIndex + 1) % (images.length - 1);
             setImageIndex(newIndex);
         }, 5000);
     });
 
     return (
-        <img src={data.slideShowImages[imageIndex]}/>
+        <img src={images[imageIndex]}/>
     );
 };
 
-export default HeroSlideShow;
+export default SlideShow;
