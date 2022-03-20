@@ -3,51 +3,37 @@ import React from "react";
 import {heroSection as data} from "../data";
 import "./HeroSection.scss";
 import logo from "../assets/logo.svg";
+import SlideShow from "./SlideShow";
 
 const HeroSection = () => {
+
+    const contactButtons = data.contactButtons.map(b => (
+        <a href={b.url} className="btn">
+            {b.text}
+        </a>
+    ));
 
     return (
         <section id="hero-section">
 
-            <div id="hero-main-content">
+            <div className="background">
+                <SlideShow images={data.slideShowImages}/>
+            </div>
 
-                <div id="left-box">
-                    <div className="content">
-                        <img
-                            id="hero-logo"
-                            src={logo}
-                            alt="EUROLAMY"
-                        />
+            <div className="content">
 
-                        <p id="hero-text">{data.subText}</p>
-
-                        <div id="hero-links">
-                            <a
-                                href="https://m.me/EUROLAMY"
-                                className="btn">
-                                FaceBook Messenger
-                            </a>
-                            <a
-                                href="https://wa.me/+50250006820?text=Hola,%20quiziera%20saber%20mas%20informacion%20acerca%20de%20sus%20servicios."
-                                className="btn">
-                                Whatsapp
-                            </a>
-                        </div>
+                <div className="left brand-gradient-background">
+                    <img src={logo} id="top-logo"/>
+                    <p className="description">{data.subText}</p>
+                    <div className="contact-list">
+                        {contactButtons}
                     </div>
                 </div>
 
-                <div id="right-box">
-                    <div className="content">
-                    </div>
+                <div className="right grow">
                 </div>
 
             </div>
-
-            {/* <div className="next-section-indicator-wrapper">
-                <div className="next-section-indicator">
-                    Deslice para ver projectos realizados
-                </div>
-            </div> */}
 
         </section>
     );
