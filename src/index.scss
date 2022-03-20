@@ -8,7 +8,8 @@ html {
     letter-spacing: 2px;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Playfair Display', serif;
+    // font-family: 'Playfair Display', serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -49,11 +50,16 @@ a {
         align-items: center;
         justify-content: center;
         padding: 44px 77px;
+        @media (max-width: $mobile-width) {
+            padding: 22px 44px;
+        }
     }
 }
 
 .description {
     margin-bottom: 55px;
+    font-weight: 100;
+    font-style: italic;
 }
 
 .grow {
@@ -64,7 +70,7 @@ a {
 
 .brand-gradient-background {
     background: -webkit-gradient(linear, left top, left bottom, from($color-main), to($color-main-accent));
-    background: linear-gradient(45deg, $color-main, $color-main-accent);
+    background: linear-gradient(45 * 5deg, $color-main, $color-main-accent);
 }
 
 .blur-background {
@@ -81,12 +87,19 @@ a {
     padding: 10px 22px;
     font-size: 16px;
     letter-spacing: 1px;
-    background-color: transparentize(black, 0.9);
+    // background-color: transparentize(black, 0.8);
+    background-color: $color-light;
+    color: $color-dark;
     font-family: 'Source Sans Pro', sans-serif;
 
     &:hover {
-        background-color: transparentize(black, 0.7);
+        // background-color: transparentize(black, 0.7);
+        // background-color: darken($color: $color-light, $amount: 20%);
+        background-color: transparent;
+        color: $color-light;
         cursor: pointer;
+
+        outline: dashed white 1px;
     }
 
     @media (max-width: $mobile-width) {

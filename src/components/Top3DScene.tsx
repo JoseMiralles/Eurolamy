@@ -35,9 +35,9 @@ const setup3DComputer = (
 ) => {
 
     const scene = new THREE.Scene();
-    camera.position.z = 0;
+    camera.position.z = 125;
     camera.position.x = 110;
-    camera.position.y = 0; // TODO: Animate this trough scroll.
+    camera.position.y = 20;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(parent.clientWidth, parent.clientHeight);
