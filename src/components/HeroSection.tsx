@@ -4,6 +4,7 @@ import {heroSection as data} from "../data";
 import "./HeroSection.scss";
 import logo from "../assets/logo.svg";
 import SlideShow from "./SlideShow";
+import Top3DScene from "./Top3DScene";
 
 const HeroSection = () => {
 
@@ -17,7 +18,7 @@ const HeroSection = () => {
         <section id="hero-section" className="brand-gradient-background">
 
             <div className="background">
-                {/* Add wireframe animation. */}
+                <Top3DScene/>
             </div>
 
             <div className="content">

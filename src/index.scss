@@ -64,12 +64,12 @@ a {
 
 .brand-gradient-background {
     background: -webkit-gradient(linear, left top, left bottom, from($color-main), to($color-main-accent));
-    background: linear-gradient(45*3deg, $color-main, $color-main-accent);
+    background: linear-gradient(45deg, $color-main, $color-main-accent);
 }
 
 .blur-background {
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     background-color: transparentize($color: $color-dark, $amount: 0.9);
 }
 
