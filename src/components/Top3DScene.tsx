@@ -4,8 +4,11 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import "./Top3DScene.scss";
+import { runOnceOnOrientaitonChange } from "../util/utils";
 
 const Top3DScene = () => {
+
+  // const askForSensorPermission = ;
 
     useEffect(() => {
         
@@ -19,19 +22,26 @@ const Top3DScene = () => {
           1000
         );
 
-        setup3DComputer(camera, parent);
+        setup3DScene(camera, parent);
     },[]);
 
+    const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      console.log("Clicked");
+      if (typeof (DeviceOrientationEvent as any).requestPermission === "function") {
+        (DeviceOrientationEvent as any).requestPermission();
+      }
+    };
+
     return (
-        <div id="ThreeD-model-wrapper" className="w-100 h-100">
-            <div id="3d-model"></div>
+        <div onClick={handleClick} id="ThreeD-model-wrapper">
         </div>
     );
 };
 
-const setup3DComputer = (
+const setup3DScene = (
     camera: THREE.PerspectiveCamera,
-    parent: HTMLElement
+    parent: HTMLElement,
+    canChangeOrientation: boolean = false
 ) => {
 
     const scene = new THREE.Scene();
@@ -46,6 +56,7 @@ const setup3DComputer = (
     controls.autoRotate = true;
     controls.autoRotateSpeed = 0.1;
 
+    renderer.domElement.classList.add("disable-touch");
     parent.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
@@ -67,14 +78,36 @@ const setup3DComputer = (
       animate();
       window.addEventListener("resize", onWindowResize, false);
 
-      if (true) { // TODO: Check if there is an accelerometer.
-        window.addEventListener("mousemove", (e) => {
-          camera.position.y = ((e.clientY / window.innerHeight) * 5) + 20;
-          // camera.position.x = ((e.clientX / window.innerWidth) * 5) + -40;
-        });
-      } else {
-        // TODO: Add giro controls.
-      }
+
+      const mouseMoveHandler = (e: MouseEvent) => {
+        camera.position.y = ((e.clientY / window.innerHeight) * 5) + 20;
+
+        const halfwayPointX = window.innerWidth / 2;
+        let speed = halfwayPointX - e.clientX;
+        speed = speed / halfwayPointX * 0.2;
+        controls.autoRotateSpeed = speed;
+      };
+      // Use the mouse to change the camera.
+      window.addEventListener("mousemove", mouseMoveHandler);
+
+      // Use the device orientation to control the camera.
+      // Beta = up down, gamma = left right
+      window.addEventListener(
+        "deviceorientation",
+        (event: DeviceOrientationEvent) => {
+          window.removeEventListener("mousemove", mouseMoveHandler);
+          if (event.beta && event.gamma) {
+
+            let position = (90 - Math.min(Math.max(event.beta, 0), 90)) / 90;
+            position = 25 + 10 * position;
+            camera.position.y = position;
+
+            let speed = event.gamma / 30;
+            speed = speed * 1;
+            controls.autoRotateSpeed = speed;
+          }
+        }
+      );
     });
 
     function animate() {

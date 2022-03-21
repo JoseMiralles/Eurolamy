@@ -76,7 +76,7 @@ a {
 .blur-background {
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-    background-color: transparentize($color: $color-dark, $amount: 0.9);
+    // background-color: transparentize($color: $color-dark, $amount: 0.9);
 }
 
 .btn {
@@ -113,4 +113,8 @@ a {
 .next-section-indicator{
     position: relative;
     bottom: -100%;
+}
+
+.disable-touch {
+    pointer-events: none;
 }
