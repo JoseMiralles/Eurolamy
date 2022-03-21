@@ -35,9 +35,9 @@ const setup3DComputer = (
 ) => {
 
     const scene = new THREE.Scene();
-    camera.position.z = 125;
-    camera.position.x = 110;
-    camera.position.y = 20;
+    camera.position.z = 100;
+    camera.position.x = 50;
+    camera.position.y = 30;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(parent.clientWidth, parent.clientHeight);
@@ -49,18 +49,21 @@ const setup3DComputer = (
     parent.appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load(require("../assets/z89pc.glb"), function (gltf) {
-      const mesh = gltf.scene.children[0] as any;
-      const wireframe = new THREE.WireframeGeometry(mesh.geometry);
-      const line = new THREE.LineSegments(wireframe) as any;
-      line.position.y = -0.2;
-      line.position.x = 0;
-      line.material.depthTest = false;
-      line.material.opacity = 0.2;
-      line.material.transparent = true;
-      line.material.color = new THREE.Color("white");
+    loader.load(require("../assets/3d_scene.glb"), function (gltf) {
 
-      scene.add(line);
+      // Add all of the elements into the scene.
+      gltf.scene.children.forEach((mesh: any) => {
+              const wireframe = new THREE.WireframeGeometry(mesh.geometry);
+              const line = new THREE.LineSegments(wireframe) as any;
+              line.position.x = 0; // left, right
+              line.position.y = -0.7; // up, down
+              line.material.depthTest = false;
+              line.material.opacity = 0.2;
+              line.material.transparent = true;
+              line.material.color = new THREE.Color("white");
+        
+              scene.add(line);
+      });
       animate();
       window.addEventListener("resize", onWindowResize, false);
     });
