@@ -10,6 +10,19 @@
         max-width: 480px;
         @media (max-width: $mobile-width) {
             max-width: unset;
+            height: 100vh;
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+        .right {
+            display: none;
+        }
+        .blur-background {
+
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            background-color: transparentize($color: $color-dark, $amount: 0.4);
         }
     }
 }

@@ -36,7 +36,7 @@ const setup3DComputer = (
 
     const scene = new THREE.Scene();
     camera.position.z = 100;
-    camera.position.x = 50;
+    camera.position.x = -50;
     camera.position.y = 30;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -66,6 +66,15 @@ const setup3DComputer = (
       });
       animate();
       window.addEventListener("resize", onWindowResize, false);
+
+      if (true) { // TODO: Check if there is an accelerometer.
+        window.addEventListener("mousemove", (e) => {
+          camera.position.y = ((e.clientY / window.innerHeight) * 5) + 20;
+          // camera.position.x = ((e.clientX / window.innerWidth) * 5) + -40;
+        });
+      } else {
+        // TODO: Add giro controls.
+      }
     });
 
     function animate() {
