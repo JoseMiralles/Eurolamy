@@ -95,9 +95,11 @@ const setup3DScene = (
       window.addEventListener(
         "deviceorientation",
         (event: DeviceOrientationEvent) => {
-          window.removeEventListener("mousemove", mouseMoveHandler);
+
           if (event.beta && event.gamma) {
 
+            console.log("Removing orientation");
+            window.removeEventListener("mousemove", mouseMoveHandler);
             let position = (90 - Math.min(Math.max(event.beta, 0), 90)) / 90;
             position = 25 + 10 * position;
             camera.position.y = position;
