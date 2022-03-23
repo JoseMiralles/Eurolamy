@@ -1,0 +1,43 @@
+@import "./colors.scss";
+@import "./values.scss";
+
+#hero-section {
+    height: 100vh;
+    width: 100vw;
+    color: $color-light;
+
+    .left {
+        max-width: 480px;
+        @media (max-width: $mobile-width) {
+            max-width: unset;
+            height: 100vh;
+        }
+    }
+
+    @media (max-width: $mobile-width) {
+        .right {
+            display: none;
+        }
+        .blur-background {
+
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+        }
+    }
+}
+
+#top-logo {
+    height: 55px;
+    margin-bottom: 18px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    & > * {
+        margin-bottom: 10px;
+    }
+}
