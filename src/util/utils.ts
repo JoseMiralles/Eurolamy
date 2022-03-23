@@ -13,3 +13,8 @@ export const runOnceOnOrientaitonChange = (
             handler
         );
 };
+
+export const isiOSorAndroid = (): boolean => {
+    const userAgent = navigator.userAgent;
+    return /android/i.test(userAgent) || /iPad|iPhone|iPod/i.test(userAgent);
+};

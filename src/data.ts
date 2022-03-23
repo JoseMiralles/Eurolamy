@@ -1,3 +1,5 @@
+import { isiOSorAndroid } from "./util/utils";
+
 export const heroSection = {
     title: "MOBILIARIO",
     subText: `Diseño y fabricación de muebles en Guatemala. Desarrollamos proyectos a la medida y a tu inversión.`,
@@ -16,10 +18,12 @@ export const heroSection = {
         },
         {
             text: "Whatsapp",
-            url: "https://wa.me/+50250006820?text=Hola,%20quiziera%20saber%20mas%20informacion%20acerca%20de%20sus%20servicios."
+            url: "https://wa.me/+50237250509?text=Hola,%20quiziera%20saber%20mas%20informacion%20acerca%20de%20sus%20servicios."
         }
     ]
 };
+
+if (!isiOSorAndroid()) heroSection.contactButtons = heroSection.contactButtons.filter(b => b.text !== "Whatsapp");
 
 export interface IFinishedProject {
     name: string;

@@ -26,6 +26,7 @@ const HeroSection = () => {
                 <div className="left blur-background">
                     <img src={logo} id="top-logo"/>
                     <p className="description">{data.subText}</p>
+                    <p id="contact-text">Contactenos:</p>
                     <div className="contact-list">
                         {contactButtons}
                     </div>
