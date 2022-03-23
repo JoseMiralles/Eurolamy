@@ -19,6 +19,8 @@ a {
 
 .background {
     position: absolute;
+    top:0;
+    left:0;
     width: 100vw;
     height: 100vh;
 
@@ -50,6 +52,7 @@ a {
         align-items: center;
         justify-content: center;
         padding: 44px 77px;
+        z-index: 10;
         @media (max-width: $mobile-width) {
             padding: 22px 44px;
         }
@@ -76,7 +79,9 @@ a {
 .blur-background {
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-    // background-color: transparentize($color: $color-dark, $amount: 0.9);
+    @supports not (backdrop-filter: blur()) {
+        background-color: transparentize($color: $color-dark, $amount: 0.6);
+    }
 }
 
 .btn {
